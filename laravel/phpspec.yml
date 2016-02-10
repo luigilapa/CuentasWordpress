@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: CuentasFacturas
+        psr4_prefix: CuentasFacturas
+        src_path: app
