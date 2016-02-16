@@ -49,7 +49,7 @@
                         var token = $('#token').val();
                         //***************//
                         $.ajax({
-                            url : '/CuentasFacturas/user_restart/'+id,
+                            url : dir+'user_restart/'+id,
                             headers:{'X-CSRF-TOKEN' : token},
                             type:'GET',
                             dataType: 'json',

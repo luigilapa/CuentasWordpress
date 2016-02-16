@@ -75,7 +75,7 @@
              }
              */
             $.ajax({
-                url : '/CuentasFacturas/buscarproveedor_ctaxpagar/'+identificacion,
+                url : dir+'buscarproveedor_ctaxpagar/'+identificacion,
                 type:'GET',
                 dataType: 'json',
                 success:function(r)

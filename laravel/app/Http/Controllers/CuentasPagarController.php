@@ -25,6 +25,12 @@ class CuentasPagarController extends Controller
 
     public function postRegistro(Requests\Cuentas\CtaPagarRequest $request)
     {
+		$fecha_actual = date('Y-m-d');
+		if($request['fecha_max_pago'] <= $fecha_actual)
+		{
+			$errors = array("0" => "La fecha m&#225;xima de pago debe ser mayor a la fecha actual!");
+            return $request->response($errors);
+		}
         //CuentasxcobrarModel::create($request->all());
         $this->GuardarFactura($request->all());
         return redirect()->route('registrar_ctaxpagar')->with('message', 'ok');

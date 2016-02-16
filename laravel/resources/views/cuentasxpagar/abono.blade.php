@@ -82,7 +82,7 @@
              }
              */
             $.ajax({
-                url : '/CuentasFacturas/abono_ctaxpagar_ajax/'+identificacion,
+                url : dir+'abono_ctaxpagar_ajax/'+identificacion,
                 type:'GET',
                 dataType: 'json',
                 success:function(r)

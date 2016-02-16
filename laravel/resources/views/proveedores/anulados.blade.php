@@ -60,7 +60,7 @@
                         var token = $('#token').val();
                         //***************//
                         $.ajax({
-                            url : '/CuentasFacturas/restaurar_proveedor/'+id,
+                            url : dir+'restaurar_proveedor/'+id,
                             headers:{'X-CSRF-TOKEN' : token},
                             type:'GET',
                             dataType: 'json',
@@ -100,7 +100,7 @@
                         var token = $('#token').val();
                         //***************//
                         $.ajax({
-                            url : '/CuentasFacturas/eliminar_proveedor/'+id,
+                            url : dir+'eliminar_proveedor/'+id,
                             headers:{'X-CSRF-TOKEN' : token},
                             type:'GET',
                             dataType: 'json',

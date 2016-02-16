@@ -26,6 +26,12 @@ class CuentasCobrarController extends Controller
 
     public function postRegistro(Requests\Cuentas\CtaCobrarRequest $request)
     {
+		$fecha_actual = date('Y-m-d');
+		if($request['fecha_max_pago'] <= $fecha_actual)
+		{
+			$errors = array("0" => "La fecha m&#225;xima de pago debe ser mayor a la fecha actual!");
+            return $request->response($errors);
+		}
         //CuentasxcobrarModel::create($request->all());
         $this->GuardarFactura($request->all());
         return redirect()->route('registrar_ctaxcobrar')->with('message', 'ok');
@@ -58,7 +64,7 @@ class CuentasCobrarController extends Controller
                                         ->where("estado_activo","=",1)
                                         ->join('clientes', 'clientes.id', '=', 'cuentasxcobrar.cliente_id')
                                         ->select(DB::raw('clientes.identificacion, clientes.nombres, clientes.apellidos, cuentasxcobrar.id, cuentasxcobrar.monto, cuentasxcobrar.detalle, cuentasxcobrar.fecha_max_pago, cuentasxcobrar.created_at, cuentasxcobrar.estado_activo, cuentasxcobrar.saldo, cuentasxcobrar.cliente_id'))
-                                        ->paginate(10);
+                                        ->get();
 
         if($facturas->count() == 0)
         {

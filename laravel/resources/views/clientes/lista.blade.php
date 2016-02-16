@@ -87,7 +87,7 @@
                         var token = $('#token').val();
                         //***************//
                         $.ajax({
-                            url : '/CuentasFacturas/anular_cliente/'+id,
+                            url : dir+'anular_cliente/'+id,
                             headers:{'X-CSRF-TOKEN' : token},
                             type:'GET',
                             dataType: 'json',

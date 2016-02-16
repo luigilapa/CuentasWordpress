@@ -75,7 +75,7 @@
                  }
                  */
                 $.ajax({
-                    url: '/CuentasFacturas/buscarcliente_ctaxcobrar/' + identificacion,
+                    url: dir+'buscarcliente_ctaxcobrar/' + identificacion,
                     type: 'GET',
                     dataType: 'json',
                     success: function (r) {

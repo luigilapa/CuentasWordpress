@@ -8,6 +8,9 @@
     {!! Html::style('assets/css/bootstrap.min.css') !!}
 
     {!! Html::style('assets/css/layout.css') !!}
+	<script>
+		var dir = "/CuentasFacturas/";
+	</script>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-static-top">
